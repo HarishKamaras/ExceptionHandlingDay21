@@ -82,6 +82,20 @@ public class MainClass {
             System.out.println("Invaild, please enter minimum 8 character");
         }
     }
+    public static void passwordRule2(){
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern="^(?=.*[A-Z])[a-zA-Z0-9@#$%^&+]{8,}$";
+        System.out.println("Enter the Password");
+        String passWord=scanner.next();
+        Pattern pattern=Pattern.compile(PasswordPattern);
+        Matcher matcher=pattern.matcher(passWord);
+        Boolean result=matcher.matches();
+        if(result==true){
+            System.out.println("Password is valid");
+        }else{
+            System.out.println("Invaild, please enter one upper case and minimum 8 character");
+        }
+    }
         public static void main(String[] args) {
         System.out.println("Welcome to Exception Handling");
         firstName();//UC1
@@ -89,5 +103,6 @@ public class MainClass {
         email();//UC3
         mobileNumber();//UC4
         passwordRule1();//UC5
+        passwordRule2();//UC6
     }
 }
