@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainClass {
-    public boolean firstName(String firstName) {
+   /* public boolean firstName(String firstName) {
         String firstNamePattern = "[A-Z]{1}[a-z]{2,}";
         Pattern pattern = Pattern.compile(firstNamePattern);
         Matcher matcher = pattern.matcher(firstName);
@@ -89,7 +89,7 @@ public class MainClass {
             }
             i++;
         }
-    }
+    }*/
         public static void main(String[] args) {
         System.out.println("Welcome to Exception Handling");
         /*firstName();//UC1
@@ -100,6 +100,63 @@ public class MainClass {
         passwordRule2();//UC6
         passwordRule3();//UC7
         passwordRule4();//UC8*/
-        emailAll();//UC9
-    }
+        //emailAll();//UC9
+            try {
+                ExceptionClass.firstNameException();
+            } catch (CustomException e) {
+                //throw new RuntimeException(e);
+                System.out.println("Custom Exception is handled");
+            }
+            System.out.println("****Rest of codes****");
+
+            try {
+                ExceptionClass.lastNameException();
+            } catch (CustomException e) {
+                //throw new RuntimeException(e);
+                System.out.println("Custom Exception is handled");
+            }
+            System.out.println("****Rest of codes****");
+            try {
+                ExceptionClass.emailException();
+            } catch (CustomException e) {
+                //throw new RuntimeException(e);
+                System.out.println("Custom Exception is handled");
+            }
+            System.out.println("****Rest of codes****");
+            try {
+                ExceptionClass.mobileNumberException();
+            } catch (CustomException e) {
+                //throw new RuntimeException(e);
+                System.out.println("Custom Exception is handled");
+            }
+            System.out.println("****Rest of codes****");
+            try {
+                ExceptionClass.passwordRule1Exception();
+            } catch (CustomException e) {
+                //throw new RuntimeException(e);
+                System.out.println("Custom Exception is handled");
+            }
+            System.out.println("****Rest of codes****");
+            try {
+                ExceptionClass.passwordRule2Exception();
+            } catch (CustomException e) {
+                //throw new RuntimeException(e);
+                System.out.println("Custom Exception is handled");
+            }
+            System.out.println("****Rest of codes****");
+            try {
+                ExceptionClass.passwordRule3Exception();
+            } catch (CustomException e) {
+                //throw new RuntimeException(e);
+                System.out.println("Custom Exception is handled");
+            }
+            System.out.println("****Rest of codes****");
+            try {
+                ExceptionClass.passwordRule4Exception();
+            } catch (CustomException e) {
+                //throw new RuntimeException(e);
+                System.out.println("Custom Exception is handled");
+            }
+            System.out.println("****Rest of codes****");
+        }
 }
