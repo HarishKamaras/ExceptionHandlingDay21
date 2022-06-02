@@ -5,156 +5,101 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainClass {
-    public static void firstName() {
-
+    public boolean firstName(String firstName) {
         String firstNamePattern = "[A-Z]{1}[a-z]{2,}";
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter First Name:");
-        String firstName = scanner.next();
         Pattern pattern = Pattern.compile(firstNamePattern);
         Matcher matcher = pattern.matcher(firstName);
         boolean result = matcher.matches();
-
-        if(result == true){
-            System.out.println("First Name is valid");
-        }
-
-        else
-            System.out.println("First Name is Invalid");
+        return result;
     }
-    public static void lastName() {
-
+    //UC2
+    public boolean lastName(String lastName) {
         String lastNamePattern = "[A-Z]{1}[a-z]{2,}";
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Last Name:");
-        String lastName = scanner.next();
         Pattern pattern = Pattern.compile(lastNamePattern);
         Matcher matcher = pattern.matcher(lastName);
         boolean result = matcher.matches();
-
-        if(result == true)
-            System.out.println("Last Name is Valid");
-        else
-            System.out.println("Last Name is Invalid");
+        return result;
     }
-    public static void email(){
-        String emailPattern= "[a-zA-Z0-9]+[.+-]{0,1}[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.a-z]{0,4}";
-        System.out.println("Enter your Email:");
-        Scanner scanner = new Scanner(System.in);
-        String email = scanner.next();
-        Pattern pattern=Pattern.compile(emailPattern);
-        Matcher matcher=pattern.matcher(email);
-        boolean result=matcher.matches();
-
-        if(result== true){
-            System.out.println("true");
-        }else{
-            System.out.println("Email is not valid");
-        }
+    //UC3
+    public boolean email(String email) {
+        String emailPattern = "[a-zA-Z0-9]+[.+-]{0,1}[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.a-z]{0,4}";
+        Pattern pattern2 = Pattern.compile(emailPattern);
+        Matcher matcher2 = pattern2.matcher(email);
+        boolean result = matcher2.matches();
+        return result;
     }
-    public static void mobileNumber() {
-        Scanner scanner = new Scanner(System.in);
+    //UC4
+    public boolean mobileNumber(String mobileNumber) {
         String MobileNumberPattern = "(91-)?[0-9]{10}";
-        System.out.println("Enter the phone number");
-        String phoneNumber = scanner.next();
-        Pattern pattern = Pattern.compile(MobileNumberPattern);
-        Matcher matcher = pattern.matcher(phoneNumber);
-        Boolean result = matcher.matches();
-
-        if (result == true) {
-            System.out.println("Mobile number is valid");
-        } else {
-            System.out.println("Mobile number is invalid");
-        }
+        Pattern pattern3 = Pattern.compile(MobileNumberPattern);
+        Matcher matcher3 = pattern3.matcher(mobileNumber);
+        Boolean result = matcher3.matches();
+        return result;
     }
-    public static void passwordRule1() {
-        Scanner scanner = new Scanner(System.in);
+    //UC5
+    public boolean passwordRule1(String passWord) {
         String PasswordPattern = "[a-zA-Z0-9~!@#$]{8,}";
-        System.out.println("Enter the Password");
-        String passWord = scanner.next();
         Pattern pattern = Pattern.compile(PasswordPattern);
         Matcher matcher = pattern.matcher(passWord);
         Boolean result = matcher.matches();
-
-        if (result == true) {
-            System.out.println("Password is valid");
-        } else {
-            System.out.println("Invaild, please enter minimum 8 character");
-        }
+        return result;
     }
-    public static void passwordRule2(){
+    //UC6
+    public boolean passwordRule2(String passWord) {
         Scanner scanner = new Scanner(System.in);
-        String PasswordPattern="^(?=.*[A-Z])[a-zA-Z0-9@#$%^&+]{8,}$";
-        System.out.println("Enter the Password");
-        String passWord=scanner.next();
-        Pattern pattern=Pattern.compile(PasswordPattern);
-        Matcher matcher=pattern.matcher(passWord);
-        Boolean result=matcher.matches();
-        if(result==true){
-            System.out.println("Password is valid");
-        }else{
-            System.out.println("Invaild, please enter one upper case and minimum 8 character");
-        }
+        String PasswordPattern = "^(?=.*[A-Z])[a-zA-Z0-9@#$%^&+]{8,}$";
+        Pattern pattern = Pattern.compile(PasswordPattern);
+        Matcher matcher = pattern.matcher(passWord);
+        Boolean result = matcher.matches();
+        return result;
     }
-    public static void passwordRule3() {
+    //UC7
+    public boolean passwordRule3(String passWord) {
         Scanner scanner = new Scanner(System.in);
         String PasswordPattern = "^(?=.*[0-9])(?=.*[A-Z])[a-zA-Z0-9@#$%^&+]{8,}$";
-        System.out.println("Enter the Password");
-        String passWord = scanner.next();
         Pattern pattern = Pattern.compile(PasswordPattern);
         Matcher matcher = pattern.matcher(passWord);
         Boolean result = matcher.matches();
-
-        if (result == true) {
-            System.out.println("Password is valid");
-        } else {
-            System.out.println("Invaild, please enter one number and minimum 8 character");
-        }
+        return result;
     }
-    public static void passwordRule4() {
+    //UC8
+    public boolean passwordRule4(String passWord) {
         Scanner scanner = new Scanner(System.in);
-        String PasswordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])[a-zA-Z0-9@#$%^&+=]{8,}$";
-        System.out.println("Enter the Password");
-        String passWord = scanner.next();
+        String PasswordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*])[a-zA-Z0-9@#$%^&+*]{8,}$";
         Pattern pattern = Pattern.compile(PasswordPattern);
         Matcher matcher = pattern.matcher(passWord);
         Boolean result = matcher.matches();
-
-        if (result == true) {
-            System.out.println("Password is valid");
-        } else {
-            System.out.println("Invaild, please enter one number and minimum 8 character");
-        }
+        return result;
     }
-    public static void emailAll(){
-        String emailPattern= "[a-zA-Z0-9]+[.+-]{0,1}[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.a-z]{0,4}";
+    public static void emailAll() {
+        String emailPattern = "[a-zA-Z0-9]+[.+-]{0,1}[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.a-z]{0,4}";
         System.out.println("Enter your Email:");
-        String[] str = {"abc@yahoo.com","abc-100@yahoo.com","abc.100@yahoo.com","abc111@abc.com",
-                "abc-100@abc.net","abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"};
-        int i =0;
-        while(i<str.length) {
+        String[] str = {"abc@yahoo.com", "abc-100@yahoo.com", "abc.100@yahoo.com", "abc111@abc.com",
+                "abc-100@abc.net", "abc.100@abc.com.au", "abc@1.com", "abc@gmail.com.com", "abc+100@gmail.com"};
+        int i = 0;
+        while (i < str.length) {
             Pattern pattern = Pattern.compile(emailPattern);
             Matcher matcher = pattern.matcher(str[i]);
             Boolean result = matcher.matches();
 
             if (result == true) {
-                System.out.println(i+": Valid");
+                System.out.println(i + ": Valid");
             } else {
-                System.out.println(i+": Email is not valid");
+                System.out.println(i + ": Email is not valid");
             }
             i++;
         }
     }
         public static void main(String[] args) {
         System.out.println("Welcome to Exception Handling");
-        firstName();//UC1
+        /*firstName();//UC1
         lastName();//UC2
         email();//UC3
         mobileNumber();//UC4
         passwordRule1();//UC5
         passwordRule2();//UC6
         passwordRule3();//UC7
-        passwordRule4();//UC8
+        passwordRule4();//UC8*/
         emailAll();//UC9
     }
 }
