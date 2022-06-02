@@ -111,6 +111,21 @@ public class MainClass {
             System.out.println("Invaild, please enter one number and minimum 8 character");
         }
     }
+    public static void passwordRule4() {
+        Scanner scanner = new Scanner(System.in);
+        String PasswordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])[a-zA-Z0-9@#$%^&+=]{8,}$";
+        System.out.println("Enter the Password");
+        String passWord = scanner.next();
+        Pattern pattern = Pattern.compile(PasswordPattern);
+        Matcher matcher = pattern.matcher(passWord);
+        Boolean result = matcher.matches();
+
+        if (result == true) {
+            System.out.println("Password is valid");
+        } else {
+            System.out.println("Invaild, please enter one number and minimum 8 character");
+        }
+    }
         public static void main(String[] args) {
         System.out.println("Welcome to Exception Handling");
         firstName();//UC1
@@ -120,5 +135,6 @@ public class MainClass {
         passwordRule1();//UC5
         passwordRule2();//UC6
         passwordRule3();//UC7
+        passwordRule4();//UC8
     }
 }
