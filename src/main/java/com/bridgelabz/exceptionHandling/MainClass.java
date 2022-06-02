@@ -52,10 +52,26 @@ public class MainClass {
             System.out.println("Email is not valid");
         }
     }
+    public static void mobileNumber() {
+        Scanner scanner = new Scanner(System.in);
+        String MobileNumberPattern = "(91-)?[0-9]{10}";
+        System.out.println("Enter the phone number");
+        String phoneNumber = scanner.next();
+        Pattern pattern = Pattern.compile(MobileNumberPattern);
+        Matcher matcher = pattern.matcher(phoneNumber);
+        Boolean result = matcher.matches();
+
+        if (result == true) {
+            System.out.println("Mobile number is valid");
+        } else {
+            System.out.println("Mobile number is invalid");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to Exception Handling");
         firstName();//UC1
         lastName();//UC2
         email();//UC3
+        mobileNumber();//UC4
     }
 }
