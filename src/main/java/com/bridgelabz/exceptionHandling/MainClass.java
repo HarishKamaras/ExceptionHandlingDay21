@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainClass {
-   /* public boolean firstName(String firstName) {
+   /*public boolean firstName(String firstName) {
         String firstNamePattern = "[A-Z]{1}[a-z]{2,}";
         Pattern pattern = Pattern.compile(firstNamePattern);
         Matcher matcher = pattern.matcher(firstName);
@@ -70,7 +70,7 @@ public class MainClass {
         Matcher matcher = pattern.matcher(passWord);
         Boolean result = matcher.matches();
         return result;
-    }
+    }*/
     public static void emailAll() {
         String emailPattern = "[a-zA-Z0-9]+[.+-]{0,1}[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.a-z]{0,4}";
         System.out.println("Enter your Email:");
@@ -89,7 +89,7 @@ public class MainClass {
             }
             i++;
         }
-    }*/
+    }
         public static void main(String[] args) {
         System.out.println("Welcome to Exception Handling");
         /*firstName();//UC1
@@ -101,7 +101,7 @@ public class MainClass {
         passwordRule3();//UC7
         passwordRule4();//UC8*/
         //emailAll();//UC9
-            try {
+         /*   try {
                 ExceptionClass.firstNameException();
             } catch (CustomException e) {
                 //throw new RuntimeException(e);
@@ -157,6 +157,57 @@ public class MainClass {
                 //throw new RuntimeException(e);
                 System.out.println("Custom Exception is handled");
             }
-            System.out.println("****Rest of codes****");
+            System.out.println("****Rest of codes****");*/
+
+            ValidationInterface firstNameValidate = (x)->{
+                Pattern pattern = Pattern.compile("[A-Z]{1}[a-z]{2,}");
+                Matcher matcher = pattern.matcher(x);
+                boolean result = matcher.matches();
+                return result;
+            };
+            System.out.println("++++++++++++++FirstNameLambda++++++++++++++=");
+            System.out.println(firstNameValidate.isValidEntry("Harish"));
+
+            ValidationInterface lastNameValidate = (x)->{
+                Pattern pattern = Pattern.compile("[A-Z]{1}[a-z]{2,}");
+                Matcher matcher = pattern.matcher(x);
+                boolean result = matcher.matches();
+                return result;
+            };
+            System.out.println("++++++++++++++LastNameLambda++++++++++++++=");
+            System.out.println(lastNameValidate.isValidEntry("Kamarasu"));
+
+            ValidationInterface emailValidate = (x)->{
+                Pattern pattern = Pattern.compile("[a-zA-Z0-9]+[.+-]{0,1}[0-9a-zA-Z]*@[a-z0-9]+[.][a-z]{2,4}[.a-z]{0,4}");
+                Matcher matcher = pattern.matcher(x);
+                boolean result = matcher.matches();
+                return result;
+            };
+            System.out.println("++++++++++++++EmailLambda++++++++++++++=");
+            System.out.println(emailValidate.isValidEntry("abc@gmail.com"));
+
+            ValidationInterface mobileNumberValidate = (x)->{
+                Pattern pattern = Pattern.compile("(91-)?[0-9]{10}");
+                Matcher matcher = pattern.matcher(x);
+                boolean result = matcher.matches();
+                return result;
+            };
+            System.out.println("++++++++++++++MobileNumberLambda++++++++++++++=");
+            System.out.println(mobileNumberValidate.isValidEntry("91-9042269046"));
+
+            ValidationInterface passWordValidate = (x)->{
+                Pattern pattern = Pattern.compile( "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*])[a-zA-Z0-9@#$%^&+*]{8,}$");
+                Matcher matcher = pattern.matcher(x);
+                boolean result = matcher.matches();
+                return result;
+            };
+            System.out.println("++++++++++++++PasswordLambda++++++++++++++=");
+            System.out.println(passWordValidate.isValidEntry("H9a#bbbb"));
         }
-}
+        }
+
+
+
+
+
+

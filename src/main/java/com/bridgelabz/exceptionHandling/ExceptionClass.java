@@ -5,6 +5,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ExceptionClass {
+
+    /*public static boolean isValidEntry(String entry ){
+        //String firstName = scanner.next();
+        Pattern pattern = Pattern.compile("[A-Z]{1}[a-z]{2,}");
+        Matcher matcher = pattern.matcher(entry);
+        boolean result = matcher.matches();
+        return result;
+    }*/
     public static void firstNameException() throws CustomException{
 
         String firstNamePattern = "[A-Z]{1}[a-z]{2,}";
